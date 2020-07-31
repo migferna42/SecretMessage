@@ -30,9 +30,21 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 37.775345888, longitude: -3.78393), altitude: 30)
-        let pin = UIImage(named: "home")!
-        let annotationNode = LocationAnnotationNode(location: location, image: pin)
+        var location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 37.775345888, longitude: -3.78393), altitude: 30)
+        var pin = UIImage(named: "home")!
+        var annotationNode = LocationAnnotationNode(location: location, image: pin)
+        
+        //sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+        
+        location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 40.5473141, longitude: -3.6623187), altitude: 20)
+        pin = UIImage(named: "42MadridFTel")!
+        annotationNode = LocationAnnotationNode(location: location, image: pin)
+        
+        sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+        
+        location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 40.5145999, longitude: -3.6649178), altitude: 20)
+        pin = UIImage(named: "42MadridFTel")!
+        annotationNode = LocationAnnotationNode(location: location, image: pin)
         
         sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
     }
